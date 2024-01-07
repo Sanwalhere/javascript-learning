@@ -6,10 +6,10 @@ let array = [
   [7, 8, 9],
 ];
 
-// Declaring variable to store the Diagonal values
+// Declaring variables to store the Diagonal values
 let sum1 = 0;
 let sum2 = 0;
-// For loop to itterate over the values to get the array of arrays diognal values
+// For loop to iterate over the values to get the array of arrays diagonal values
 for (let i = 0; i < array.length; i++) {
   // Storing 1,5,9 in value1
   let value1 = array[i][i];
