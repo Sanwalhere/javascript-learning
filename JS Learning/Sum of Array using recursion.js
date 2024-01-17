@@ -10,7 +10,10 @@ function sumOfArrays(arr) {
   if (arr.length === 0) {
     return 0;
   }
-  return arr[arr.length - 1] + sumOfArrays(arr.slice(0, arr.length - 1));
+  // regular code
+  // return arr[arr.length - 1] + sumOfArrays(arr.slice(0, arr.length - 1));
+  // better version
+  return arr.pop() + sumOfArrays(arr);
 }
 
 console.log(sumOfArrays([1, 3, 4, 5, 6]));
