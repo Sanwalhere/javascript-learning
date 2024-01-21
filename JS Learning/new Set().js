@@ -1,5 +1,6 @@
 //--------------------------------------------------|new Set() in JavaScript|-----------------------------------------------
 
+// Example 1
 //--- It contains only unique values, the duplicate values will not be appeared:
 
 let array = [1, 2, 3, 4, 5];
@@ -21,3 +22,28 @@ object.forEach((element) => {
 
 object.clear();
 console.log(object);
+
+// Example 2
+// A Set in JavaScript is another built-in data structure that allows you to store unique values.
+
+// Creating a new Set
+const mySet = new Set();
+
+// Adding values to the set
+mySet.add("value1");
+mySet.add("value2");
+
+// Checking if a value exists in the set
+const hasValue = mySet.has("value1");
+
+// Deleting a value from the set
+mySet.delete("value1");
+
+// Clearing all values from the set
+mySet.clear();
+
+// Creating a new Set and iterating over its values
+console.log("Set Values:");
+for (const value of mySet) {
+  console.log(value);
+}
