@@ -1,29 +1,80 @@
 // -----------------------------------------------|Closures|---------------------------------------------------
-/*
-A closure is the combination of a function bundled together (enclosed) with references to its surrounding state
-(the lexical environment). In other words, a closure gives you access to an outer function's scope from an inner function.
-In JavaScript, closures are created every time a function is created, at function creation time.
-*/
 
-function returnFunc() {
-  let a = 1;
-  console.log(a);
+// closure = A function defined inside of another function, the inner function has access to the variables
+// and scope of the outer function. Allow for private variables and state maintenance.
 
-  const x = () => {
-    console.log(a);
+// Used frequently in JS frameworks: React, Vue, Angular
 
-    const y = () => {
-      console.log(a);
+// --------- EXAMPLE 1 ---------
 
-      const z = () => returnFunc();
-      console.log(a);
-    };
-    y();
-  };
-  a = 999;
-  x();
-  return x;
+function outer() {
+  const message = "Hello";
+
+  function inner() {
+    console.log(message);
+  }
+
+  inner();
 }
 
-const a = returnFunc();
-a();
+message = "Goodbye";
+
+outer();
+
+// --------- EXAMPLE 2 ---------
+
+function createCounter() {
+  let count = 0;
+
+  function increment() {
+    count++;
+    console.log(`Count increased to ${count}`);
+  }
+
+  function getCount() {
+    return count;
+  }
+
+  return { increment, getCount };
+}
+
+const counter = createCounter();
+
+counter.increment();
+counter.increment();
+counter.increment();
+
+console.log(`Current count: ${counter.getCount()}`);
+
+// --------- EXAMPLE 3 ---------
+
+function createGame() {
+  let score = 0;
+
+  function increaseScore(points) {
+    score += points;
+    console.log(`+${points}pts`);
+  }
+
+  function decreaseScore(points) {
+    score -= points;
+    console.log(`-${points}pts`);
+  }
+
+  function getScore() {
+    return score;
+  }
+
+  function getFinalResult() {
+    console.log(`The final score is ${game.getScore()}pts`);
+  }
+
+  return { increaseScore, decreaseScore, getScore, getFinalResult };
+}
+
+const game = createGame();
+
+game.increaseScore(5);
+game.increaseScore(6);
+game.decreaseScore(3);
+game.getFinalResult();
