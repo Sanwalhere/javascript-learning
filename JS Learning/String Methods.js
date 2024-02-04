@@ -51,6 +51,11 @@ const splitStr = "apple,orange,banana";
 const splitArr = str.split(" ");
 console.log(splitArr);
 
+const at = str.at(-1);
+const at1 = str.at(-3);
+const at3 = str.at(1);
+console.log(at, at1, at3);
+
 const charAt3 = str.charAt(3);
 console.log(charAt3);
 
