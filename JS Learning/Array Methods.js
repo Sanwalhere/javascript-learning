@@ -10,6 +10,8 @@ arr.shift();
 arr.splice();
 arr.splice(3, 1);
 arr.splice(6, 3);
+let a = Array.from(arr);
+console.log(a);
 console.log(arr);
 
 //--------------------------------------------------|Array Methods in JavaScript|-----------------------------------------------
