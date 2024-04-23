@@ -5,6 +5,23 @@ copy of the function, which will be invoked later. Means it will give you a
 copy which will be invoked later wherever it needs.
 */
 
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+};
+
+function greet() {
+  console.log(`Hello, ${this.firstName} ${this.lastName}!`);
+}
+
+// Creating a bound function
+const greetPerson = greet.bind(person);
+
+// Calling the bound function
+greetPerson();
+
+//------------------------------------------------
+
 let man = {
   fullName(city, country) {
     return this.firstName + " " + this.lastName + " " + city + " " + country;
@@ -58,3 +75,6 @@ let obj1 = {
 
 let objIntro = intro.bind(obj1, "national");
 objIntro();
+
+let objIntro1 = intro.bind(obj1);
+objIntro1();
