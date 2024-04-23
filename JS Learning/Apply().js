@@ -4,10 +4,8 @@ The apply() method is similar to the call() method.
 The difference is:
 The call() method takes arguments separately.
 The apply() method takes arguments as an array.
-The apply() method is very handy if you want to use an array instead
-of an argument list.
 */
-
+let o = { l: "s" };
 const person = {
   fullName: function (city, country) {
     return this.firstName + " " + this.lastName + "," + city + "," + country;
@@ -20,6 +18,7 @@ const person1 = {
 };
 
 person.fullName.apply(person1, ["Oslo", "Norway"]);
+person.fullName.apply();
 
 // --------------------------------------------------------
 
